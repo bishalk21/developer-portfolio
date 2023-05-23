@@ -1,5 +1,7 @@
 :root {
   --font-montserrat: "'Montserrat', sans-serif";
+
+  --dark: #000000;
 }
 
 * {

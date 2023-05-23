@@ -13,12 +13,12 @@ function App() {
     <>
       <BrowserRouter>
         <Navigation />
-        <Home />
+        {/* <Home />
         <Technologies />
         <Projects />
         <About />
         <Parallax />
-        <Footer />
+        <Footer /> */}
       </BrowserRouter>
     </>
   );
