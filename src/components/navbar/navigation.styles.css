@@ -5,8 +5,73 @@
   right: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 7.5625rem;
+  padding: 0 5rem;
+  z-index: 999;
+  background-color: var(--bg-dark);
+  color: #fff;
 }
 
 .nav > .sticky {
   position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 5.32875rem;
+  background-color: var(--bg-dark);
+  z-index: 999;
+}
+
+.title > img {
+  cursor: pointer;
+  color: red;
+}
+
+.nav-menu-list {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  flex: 1;
+  margin-left: 8rem;
+}
+
+.styled-nav-links {
+  color: var(--color-lightGray);
+}
+
+.menu {
+  cursor: pointer;
+  display: none;
+}
+
+.line {
+  height: 0.1125rem;
+  width: 2rem;
+  background: var(--color-light);
+  margin: 0.28125rem 0;
+  margin-left: 0;
+}
+
+.line1 {
+  width: 1.5rem;
+}
+
+.line3 {
+  width: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+@media all and (max-width: 768px) {
+  .styled-navbar {
+    padding: 0 2.5rem;
+  }
+
+  .nav-menu-list {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+  }
 }

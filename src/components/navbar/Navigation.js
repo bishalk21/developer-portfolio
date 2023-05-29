@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./navigation.styles.css";
-import MobileMenu from "./mobile-menu/MobileMenu";
+// import MobileMenu from "./mobile-menu/MobileMenu";
+import me from "../../assets/logo/me.png";
 import { Link } from "react-scroll";
 
 const Navigation = () => {
@@ -10,20 +11,76 @@ const Navigation = () => {
     <>
       <nav className={`${stickyNav ? "sticky" : ""} styled-navbar`}>
         <div className="title">
-          <div className="nav-logo">Logo</div>
+          <Link>
+            <img
+              src={me}
+              alt="logo"
+              className="nav-logo"
+              width="39px"
+              height="39px"
+            />
+          </Link>
         </div>
         <ul className="nav-menu-list">
           <li className="nav-list">
-            <Link className="styled-nav-links">Home</Link>
+            <Link
+              to="home"
+              smooth={true}
+              duration={0}
+              delay={0}
+              spy={true}
+              spyThrottle={0}
+              exact="true"
+              offset={-85.26}
+              className="styled-nav-links"
+            >
+              Home
+            </Link>
           </li>
           <li className="nav-list">
-            <Link className="styled-nav-links">Projects</Link>
+            <Link
+              to="projects"
+              smooth={true}
+              duration={0}
+              delay={0}
+              spy={true}
+              spyThrottle={0}
+              exact="true"
+              offset={-85.26}
+              className="styled-nav-links"
+            >
+              Projects
+            </Link>
           </li>
           <li className="nav-list">
-            <Link className="styled-nav-links">About</Link>
+            <Link
+              to="about"
+              smooth={true}
+              duration={0}
+              delay={0}
+              spy={true}
+              spyThrottle={0}
+              exact="true"
+              offset={-85.26}
+              className="styled-nav-links"
+            >
+              About
+            </Link>
           </li>
           <li className="nav-list">
-            <Link className="styled-nav-links">Blogs</Link>
+            <Link
+              to="playground"
+              smooth={true}
+              duration={0}
+              delay={0}
+              spy={true}
+              spyThrottle={0}
+              exact="true"
+              offset={-85.26}
+              className="styled-nav-links"
+            >
+              Blogs
+            </Link>
           </li>
         </ul>
         <a
@@ -49,8 +106,11 @@ const Navigation = () => {
         </a>
         <div className="rightToggleMenu">
           <span>Menu</span>
-          <div className="line"></div>
-          <div className="line" width="1.5rem" ml="0.5rem"></div>
+          <div className="menu">
+            <div className="line line1"></div>
+            <div className="line"></div>
+            <div className="line line3" width="1.5rem" ml="0.5rem"></div>
+          </div>
         </div>
         {/* <MobileMenu /> */}
       </nav>

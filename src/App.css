@@ -1,7 +1,11 @@
 :root {
   --font-montserrat: "'Montserrat', sans-serif";
 
-  --dark: #000000;
+  --bg-dark: #0d0e0e;
+
+  --color-dark: #000000;
+  --color-light: #ffffff;
+  --color-lightGray: #aaa;
 }
 
 * {
