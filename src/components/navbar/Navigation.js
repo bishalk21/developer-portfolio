@@ -1,11 +1,29 @@
 import React, { useState } from "react";
 import "./navigation.styles.css";
-// import MobileMenu from "./mobile-menu/MobileMenu";
+import MobileMenu from "./mobile-menu/MobileMenu";
 import me from "../../assets/logo/me.png";
 import { Link } from "react-scroll";
 
 const Navigation = () => {
   const [stickyNav, setStickyNav] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const stickyNavFunc = () => {
+    window.scrollY >= 510 ? setStickyNav(true) : setStickyNav(false);
+  };
+
+  window.addEventListener("scroll", stickyNavFunc);
+
+  const ScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
@@ -18,6 +36,7 @@ const Navigation = () => {
               className="nav-logo"
               width="39px"
               height="39px"
+              onClick={ScrollToTop}
             />
           </Link>
         </div>
@@ -106,13 +125,13 @@ const Navigation = () => {
         </a>
         <div className="rightToggleMenu">
           <span>Menu</span>
-          <div className="menu">
+          <div className="menu" onClick={() => toggle()}>
             <div className="line line1"></div>
             <div className="line"></div>
             <div className="line line3" width="1.5rem" ml="0.5rem"></div>
           </div>
         </div>
-        {/* <MobileMenu /> */}
+        <MobileMenu isOpen={isOpen} toggle={toggle} />
       </nav>
     </>
   );

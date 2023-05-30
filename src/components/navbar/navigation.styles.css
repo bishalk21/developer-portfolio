@@ -23,7 +23,7 @@
   z-index: 999;
 }
 
-.title > img {
+.nav-logo {
   cursor: pointer;
   color: red;
 }
@@ -38,6 +38,27 @@
 
 .styled-nav-links {
   color: var(--color-lightGray);
+  font-size: 0.75rem;
+  letter-spacing: 0.09375rem;
+  text-transform: uppercase;
+  position: relative;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.rightToggleMenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.3rem;
+}
+
+@media (min-width: 768px) {
+  .rightToggleMenu span {
+    display: none;
+  }
 }
 
 .menu {

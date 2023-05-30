@@ -1,15 +1,24 @@
 import React from "react";
 import "./mobileMenu.styles.css";
+import { Link } from "react-scroll";
 
-const MobileMenu = () => {
+const MobileMenu = ({ isOpen, toggle }) => {
   return (
-    <div className="mobile-menu-container">
-      <div className="icon"></div>
+    <div
+      className={`${isOpen ? "open" : ""} mobile-menu-container`}
+      toggle={toggle}
+    >
+      <div className="icon" onClick={toggle}>
+        <span className="close-text">Close</span>
+        <div className="close-icon">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
       <ul className="mobile-menu-list">
-        <li className="mobile-menu-link">Home</li>
-        <li className="mobile-menu-link">Projects</li>
-        <li className="mobile-menu-link">About</li>
-        <li className="mobile-menu-link">Blogs</li>
+        <Link className="mobile-menu-link">Home</Link>
+        <Link className="mobile-menu-link">Projects</Link>
+        <Link className="mobile-menu-link">About</Link>
+        <Link className="mobile-menu-link">Blogs</Link>
         <a
           className="mobile-button"
           href="mailto:karkibishal00@gmail.com"
@@ -41,7 +50,7 @@ const MobileMenu = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fa-solid fa-envelope"></i> GM
+          <i class="fa-solid fa-envelope"></i> GM
         </a>
         <a
           href="https://github.com/bishalk21"
@@ -49,7 +58,7 @@ const MobileMenu = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fa-solid fa-github"></i> GH
+          <i class="fa-brands fa-github"></i> GH
         </a>
         <a
           href="https://www.linkedin.com/in/bishalk21/"
@@ -57,9 +66,11 @@ const MobileMenu = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fa-solid fa-linkedin"></i> LI
+          <i class="fa-brands fa-linkedin"></i> LI
         </a>
       </div>
+
+      <span className="mobile-quote">Namaste 🙏</span>
     </div>
   );
 };

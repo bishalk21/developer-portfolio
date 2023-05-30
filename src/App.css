@@ -1,11 +1,25 @@
 :root {
   --font-montserrat: "'Montserrat', sans-serif";
+  --font-cardo: "Cardo", "serif";
+
+  --primary: #e64e04;
+  --secondary: #4353ff;
 
   --bg-dark: #0d0e0e;
+  --bg-darkGray: #111;
+  --bg-purple: #8000ff;
+  --bg-lightBlue: #6bc5f8;
+  --bg-lightGreen: #00adb5;
 
+  --color-link: #4353ff;
   --color-dark: #000000;
   --color-light: #ffffff;
   --color-lightGray: #aaa;
+
+  --breakpoint-lg: 64rem;
+  --breakpoint-md: 58.125rem;
+  --breakpoint-sm: 48rem;
+  --breakpoint-xs: 31.25rem;
 }
 
 * {
