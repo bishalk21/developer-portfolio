@@ -34,8 +34,8 @@ const Navigation = () => {
               src={me}
               alt="logo"
               className="nav-logo"
-              width="39px"
-              height="39px"
+              width="43px"
+              height="43px"
               onClick={ScrollToTop}
             />
           </Link>
