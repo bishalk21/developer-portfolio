@@ -62,11 +62,13 @@
   transition: 0.3s ease;
   position: relative;
   overflow: hidden;
+  color: var(--color-white);
+  border-radius: 10px;
 }
 
 .mobile-button::before {
   content: "";
-  background: var(--bg-lightGreen);
+  background: var(--bg-purple);
   transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
   transform-origin: 100% 50%;
 }

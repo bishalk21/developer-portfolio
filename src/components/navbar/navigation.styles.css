@@ -38,7 +38,7 @@
 
 .styled-nav-links {
   color: var(--color-lightGray);
-  font-size: 0.755rem;
+  font-size: 0.895rem;
   letter-spacing: 0.09375rem;
   text-transform: uppercase;
   position: relative;
@@ -56,7 +56,7 @@
   width: 0;
   transform: scaleX(1);
   height: 0.0625rem;
-  background: var(--bg-lightGreen);
+  background: var(--bg-purple);
   transition: 0.3s ease-in-out;
 }
 
@@ -80,14 +80,15 @@
 .styled-cta {
   color: var(--color-white);
   letter-spacing: 0.0875rem;
-  font-size: 0.725rem;
+  font-size: 0.82rem;
   font-weight: 700;
   transition: 0.3s ease;
   text-transform: uppercase;
-  padding: 0.4rem 1.5rem;
+  padding: 0.6rem 1.5rem;
   background: var(--bg-darkGray);
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .styled-cta::before,
@@ -134,7 +135,7 @@
 
 .styled-cta::before {
   content: "";
-  background: var(--bg-lightGreen);
+  background: var(--bg-purple);
   transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
   transform-origin: 100% 50%;
 }

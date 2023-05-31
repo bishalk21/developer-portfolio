@@ -1,6 +1,7 @@
 :root {
   --font-montserrat: "'Montserrat', sans-serif";
   --font-cardo: "Cardo", "serif";
+  --font-mulish: "Mulish", "sans-serif";
 
   --primary: #e64e04;
   --secondary: #4353ff;
@@ -16,6 +17,12 @@
   --color-dark: #000000;
   --color-light: #ffffff;
   --color-lightGray: #aaa;
+  --color-brown: #fbc687;
+  --color-purple: #8000ff;
+  --color-h1: #f7f7f7;
+
+  --bg-image-projectIcon: url(./assets/icons/project-icon.svg);
+  --bg-image-aboutMeIcon: url(./assets/icons/about-me.svg);
 
   --breakpoint-lg: 64rem;
   --breakpoint-md: 58.125rem;
@@ -31,6 +38,20 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #8e8e8e;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 20px;
 }
 
 body {
