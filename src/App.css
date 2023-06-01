@@ -9,7 +9,7 @@
   --bg-dark: #0d0e0e;
   --bg-darkGray: #111;
   --bg-purple: #8000ff;
-  --color-white: #ffffff;
+  --bg-white: #ffffff;
   --bg-lightBlue: #6bc5f8;
   --bg-lightGreen: #00adb5;
 
@@ -20,6 +20,8 @@
   --color-brown: #fbc687;
   --color-purple: #8000ff;
   --color-h1: #f7f7f7;
+  --color-white: #ffffff;
+  --color-yellow: #c49a5f;
 
   --bg-image-projectIcon: url(./assets/icons/project-icon.svg);
   --bg-image-aboutMeIcon: url(./assets/icons/about-me.svg);

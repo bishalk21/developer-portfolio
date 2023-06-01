@@ -9,7 +9,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const stickyNavFunc = () => {
-    window.scrollY >= 510 ? setStickyNav(true) : setStickyNav(false);
+    window.scrollY >= 65 ? setStickyNav(true) : setStickyNav(false);
   };
 
   window.addEventListener("scroll", stickyNavFunc);

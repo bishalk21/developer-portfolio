@@ -1,12 +1,29 @@
 .home {
-  height: 100vh;
+  height: 108vh;
   position: relative;
   width: 100%;
   background: var(--bg-dark);
   color: var(--color-lightGray);
-  padding: 0 8rem;
+  padding: 0 6rem;
   display: flex;
   flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  max-width: 50rem;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  position: relative;
+  gap: 5rem;
+  height: auto;
+  align-items: center;
   justify-content: center;
 }
 
@@ -21,7 +38,7 @@
 .hero-text p {
   color: #fff9f9;
   font-family: var(--font-mulish);
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 200;
   line-height: 1.3;
 }
@@ -179,4 +196,90 @@ p span:nth-of-type(10) {
 .styled-btn:hover span {
   -webkit-transform: translateX(-0.625rem);
   transform: translateX(-0.625rem);
+}
+
+.hero-img {
+  background-image: url(../../assets/images/me.jpeg);
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 25rem;
+  width: 25rem;
+  border: 3px solid var(--color-yellow);
+  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  position: relative;
+  transition: all 1s ease-in-out;
+  -webkit-animation: morph 8s ease-in-out infinite;
+  animation: morph 8s ease-in-out infinite;
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
+
+.lines {
+  width: 5rem;
+  position: absolute;
+  bottom: -3rem;
+  background: var(--bg-white);
+  border: none;
+  height: 0.135rem;
+  border-radius: 2.8125rem;
+}
+
+.greeting {
+  position: absolute;
+  bottom: -5rem;
+}
+
+@media all and (max-width: 1196px) {
+  .hero-text {
+    width: 60%;
+  }
+
+  .hero-img {
+    width: 40%;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .home {
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .content {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    margin-top: 80px;
+    height: auto;
+    text-align: center;
+  }
+
+  .styled-btn-container {
+    justify-content: center;
+  }
+
+  .hero-img {
+    height: 22rem;
+    width: 22rem;
+  }
+
+  .hero-text {
+    align-items: center;
+  }
 }

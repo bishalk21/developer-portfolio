@@ -13,7 +13,7 @@
   color: #fff;
 }
 
-.nav > .sticky {
+.sticky {
   position: fixed;
   left: 0;
   right: 0;
