@@ -13,7 +13,7 @@ const Home = () => {
           <Row className="content">
             <Col className="hero-text" md={4}>
               <h1>
-                Front-End Developer <span className="hand-wave">👋</span>
+                Front-End React Developer <span className="hand-wave">👋</span>
               </h1>
               <p>
                 Hi, I'm Bishal Karki. A passionate Front-end React Developer
@@ -74,12 +74,30 @@ const Home = () => {
               </p>
 
               <div className="socials">
-                <a href="mailto:karkibishal00@gmail.com" target="_blank">
-                  email
+                <a
+                  href="mailto:karkibishal00@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fa-solid fa-envelope"></i>
                 </a>
-                <a href="https://www.github.com/bishalk21">Github</a>
-                <a href="https://www.linkedin.com/in/bishalk21">LI</a>
+                <a
+                  href="https://www.github.com/bishalk21"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/bishalk21"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
               </div>
+
+              <span className="quote">Don't wish for it! Work for it!</span>
             </Col>
             <Col className="hero-img" md={8}></Col>
           </Row>

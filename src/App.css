@@ -11,6 +11,7 @@
   --bg-purple: #8000ff;
   --bg-white: #ffffff;
   --bg-lightBlue: #6bc5f8;
+  --bg-lightGray: #aaa;
   --bg-lightGreen: #00adb5;
 
   --color-link: #4353ff;
@@ -58,6 +59,7 @@ html {
 
 body {
   font-size: 100%;
+  background: var(--bg-dark);
   font-family: var(--font-montserrat);
 }
 

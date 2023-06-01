@@ -1,14 +1,20 @@
 .home {
-  height: 108vh;
   position: relative;
+  height: 100vh;
   width: 100%;
   background: var(--bg-dark);
   color: var(--color-lightGray);
-  padding: 0 6rem;
   display: flex;
   flex-direction: column;
   -webkit-box-pack: center;
+}
+
+.hero-main {
+  display: flex;
+  align-items: center;
   justify-content: center;
+  height: 50rem;
+  position: relative;
 }
 
 .hero-text {
@@ -228,33 +234,85 @@ p span:nth-of-type(10) {
 .lines {
   width: 5rem;
   position: absolute;
-  bottom: -3rem;
-  background: var(--bg-white);
+  bottom: -9.5rem;
+  background: var(--bg-lightGray);
   border: none;
   height: 0.135rem;
   border-radius: 2.8125rem;
 }
 
-.greeting {
+.hero-text .greeting {
   position: absolute;
-  bottom: -5rem;
+  bottom: -12rem;
+  color: var(--color-lightGray);
 }
 
-@media all and (max-width: 1196px) {
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  position: absolute;
+  right: -24rem;
+  bottom: -12rem;
+}
+
+.socials > a {
+  cursor: pointer;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.socials > a:hover {
+  transform: translateY(-0.3125rem);
+  color: var(--color-lightGray);
+}
+
+.socials > a::after {
+  content: "";
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 2.8125rem;
+  transition: all 0.3s;
+  position: absolute;
+  background: var(--color-lightGray);
+  transform: translate(-50%, -50%);
+  left: -1rem;
+  top: 50%;
+  opacity: 0;
+}
+
+.socials > a:hover::after {
+  opacity: 1;
+}
+
+.quote {
+  position: absolute;
+  right: -15%;
+  bottom: -13%;
+  color: #94929d;
+  font-size: 0.73rem;
+  font-weight: 500;
+  letter-spacing: 0.125rem;
+}
+
+@media all and (max-width: 1296px) {
+  .home {
+    height: 100vh;
+  }
+
   .hero-text {
-    width: 60%;
+    width: 62%;
   }
 
   .hero-img {
-    width: 40%;
+    width: 38%;
   }
 }
 
 @media all and (max-width: 900px) {
   .home {
-    -webkit-box-align: center;
-    align-items: center;
-    justify-content: center;
+    height: 120vh;
+    padding: 3rem 0;
   }
 
   .hero-main {
@@ -275,11 +333,27 @@ p span:nth-of-type(10) {
   }
 
   .hero-img {
-    height: 22rem;
-    width: 22rem;
+    height: 18rem;
+    width: 18rem;
   }
 
   .hero-text {
     align-items: center;
+  }
+
+  .lines {
+    bottom: -6rem;
+  }
+
+  .hero-text .greeting {
+    bottom: -8rem;
+  }
+
+  .socials {
+    display: none;
+  }
+
+  .quote {
+    right: 28%;
   }
 }
