@@ -2,7 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Navigation from "./components/navbar/Navigation";
 import Home from "./components/home/Home";
-// import Technologies from "./components/technologies/Technologies";
+import Technologies from "./components/technologies/Technologies";
 // import Projects from "./components/projects/Projects";
 // import About from "./components/about/About";
 // import Parallax from "./components/parallax/Parallax";
@@ -14,8 +14,8 @@ function App() {
       <BrowserRouter>
         <Navigation />
         <Home />
-        {/* <Technologies />
-        <Projects />
+        <Technologies />
+        {/*  <Projects />
         <About />
         <Parallax />
         <Footer /> */}
