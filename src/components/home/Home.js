@@ -101,7 +101,6 @@ const Home = () => {
             </Col>
             <Col className="hero-img" md={8}></Col>
           </Row>
-          <Row className="skills"></Row>
         </Container>
       </section>
     </>

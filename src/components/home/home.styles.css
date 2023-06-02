@@ -311,7 +311,7 @@ p span:nth-of-type(10) {
 
 @media all and (max-width: 900px) {
   .home {
-    height: 120vh;
+    height: 110vh;
     padding: 3rem 0;
   }
 
@@ -339,6 +339,14 @@ p span:nth-of-type(10) {
 
   .hero-text {
     align-items: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
   }
 
   .lines {

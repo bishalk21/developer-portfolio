@@ -1,6 +1,7 @@
 .technologies-container {
-  color: var(--color-dark);
-  background-color: rgb(255, 255, 255);
+  background-color: var(--bg-dark);
+  color: rgb(255, 255, 255);
+  padding: 2rem;
 }
 
 .technologies-header {
@@ -27,6 +28,10 @@
 }
 
 @media all and (max-width: 900px) {
+  .technologies-container {
+    padding: 2rem;
+  }
+
   .technologies-icons img {
     height: 24px;
   }
