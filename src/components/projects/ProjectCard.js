@@ -26,12 +26,20 @@ const ProjectCard = () => {
                 <p>{project.stack[1]}</p>
               </div>
               <div className="links">
-                <a href={project.codeLink}>
-                  Code <i class="fa-brands fa-github"></i>
+                <a
+                  href={project.codeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fa-brands fa-github"></i> <span>Code</span>
                 </a>
-                <a href={project.liveLink}>
-                  Live Demo{" "}
-                  <i class="fa-solid fa-arrow-up-right-from-square link-icon"></i>
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  <span>Live</span>
                 </a>
               </div>
             </div>
