@@ -33,7 +33,7 @@ const About = () => {
               my projects are HTML, CSS, JavaScript, REACT JS, Bootstrap, Git
               and GitHub, Figma, and VS Code.
             </div>
-            <div className="styled-paragraph">
+            <div className="para-3 styled-paragraph">
               {" "}
               I have eagerness to learn something new every day and I love to
               share my knowledge to my fellow front-end developers. And I am
@@ -42,7 +42,7 @@ const About = () => {
 
             <div className="resume">
               <a href={resume} download="resume-of-bishal-karki">
-                Download Resume 
+                Download Resume
               </a>
             </div>
           </div>

@@ -1,0 +1,66 @@
+.react-parallax {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+}
+
+.react-parallax img {
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.parallax-img {
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  left: 50%;
+  width: auto;
+  filter: none;
+  transform: translate3d(-50%, 0px, 0px);
+  -webkit-transform: translate3d(-50%, 0px, 0px);
+  -moz-transform: translate3d(-50%, 0px, 0px);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  height: 772px;
+}
+
+.react-parallax-content {
+  position: relative;
+}
+
+.parallax-container {
+  height: 70vh;
+}
+
+.parallax-container .parallax-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  width: 100%;
+}
+
+@media all and (max-width: 768px) {
+  .parallax-container {
+    height: 55vh;
+  }
+
+  .parallax-container .parallax-text {
+    font-size: 2rem;
+  }
+}
+
+@media all and (max-width: 476px) {
+  .parallax-container {
+    height: 35vh;
+  }
+
+  .parallax-container .parallax-text {
+    font-size: 1.5rem;
+  }
+}
