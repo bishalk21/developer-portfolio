@@ -1,6 +1,13 @@
 import React from "react";
 import "./footer.styles.css";
 
+const toTop = () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+};
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
@@ -63,7 +70,7 @@ const Footer = () => {
 
       <div className="footer-arrow-line">
         <hr className="footer-line" />
-        <div className="arrow-to-top" title="Back to Top"></div>
+        <div className="arrow-to-top" title="Back to Top" onClick={toTop}></div>
       </div>
 
       <div className="copyright">

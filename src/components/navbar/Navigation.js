@@ -29,7 +29,7 @@ const Navigation = () => {
     <>
       <nav className={`${stickyNav ? "sticky" : ""} styled-navbar`}>
         <div className="title">
-          <Link>
+          <Link to="/">
             <img
               src={me}
               alt="logo"

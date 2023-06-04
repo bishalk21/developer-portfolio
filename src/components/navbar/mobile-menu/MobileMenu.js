@@ -15,10 +15,18 @@ const MobileMenu = ({ isOpen, toggle }) => {
         </div>
       </div>
       <ul className="mobile-menu-list">
-        <Link className="mobile-menu-link">Home</Link>
-        <Link className="mobile-menu-link">Projects</Link>
-        <Link className="mobile-menu-link">About</Link>
-        <Link className="mobile-menu-link">Blogs</Link>
+        <Link to="home" onClick={toggle} className="mobile-menu-link">
+          Home
+        </Link>
+        <Link to="projects" onClick={toggle} className="mobile-menu-link">
+          Projects
+        </Link>
+        <Link to="about" onClick={toggle} className="mobile-menu-link">
+          About
+        </Link>
+        <Link to="playground" onClick={toggle} className="mobile-menu-link">
+          Blogs
+        </Link>
         <a
           className="mobile-button"
           href="mailto:karkibishal00@gmail.com"
