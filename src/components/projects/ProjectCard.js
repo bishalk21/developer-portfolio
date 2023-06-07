@@ -14,8 +14,18 @@ const ProjectCard = () => {
             key={project.id}
           >
             <div className="pro__img">
-              <a href={project.liveLink}>
-                <img src={project.image} alt={project.title} />
+              <a
+                href={project.liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <embed
+                  src="./images/portfolio.pdf"
+                  type="application/pdf"
+                  height="600px"
+                  width="500px"
+                ></embed>
+                {/* <img src={project.image} alt={project.title} /> */}
               </a>
             </div>
             <div className="pro__text">

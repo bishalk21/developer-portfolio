@@ -1,4 +1,4 @@
-import ecom from "./images/ecom-sample.webp";
+import ecom from "./images/portfolio.pdf";
 
 export const projectsData = [
   {

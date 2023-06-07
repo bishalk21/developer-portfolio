@@ -37,14 +37,14 @@
   background-color: hsla(0, 0%, 46%, 0.2);
 }
 
-.projects-grid .pro__img img {
+.projects-grid .pro__img embed {
   height: auto;
   width: 100%;
   transform: translateY(0%);
   transition: transform 10s ease-in-out 0s;
 }
 
-.projects-grid .pro__img:hover img {
+.projects-grid .pro__img:hover embed {
   transform: translateY(-90%);
   transition: transform 10s ease-in-out 0s;
 }
