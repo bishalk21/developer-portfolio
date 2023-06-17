@@ -1,5 +1,3 @@
-import ecom from "./images/portfolio.pdf";
-
 export const projectsData = [
   {
     id: 1,

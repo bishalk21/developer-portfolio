@@ -20,6 +20,8 @@
   border-radius: 1.7rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
+  /* align-items: center; */
+  justify-content: center;
 }
 
 .projects-grid .reversed-proj {
