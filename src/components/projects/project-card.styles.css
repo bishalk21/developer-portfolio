@@ -12,7 +12,7 @@
   flex-direction: row;
   gap: 1rem;
   height: 30rem;
-  padding: 2rem;
+  padding: 1.6rem;
 }
 
 .projects-grid .pro {
@@ -20,7 +20,6 @@
   border-radius: 1.7rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
-  /* align-items: center; */
   justify-content: center;
 }
 
@@ -32,7 +31,6 @@
 .projects-grid .pro__img {
   border-radius: 1.7rem;
   height: auto;
-  min-width: 30rem;
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -138,5 +136,21 @@
     height: 40rem;
     margin: 0 auto;
     width: fit-content;
+    align-items: center;
+  }
+
+  .projects-grid .pro__img {
+    height: 55%;
+    width: 100%;
+  }
+
+  .links {
+    margin-top: 1.3rem;
+  }
+}
+
+@media all and (max-width: 1280px) {
+  .projects-grid .pro__img {
+    min-width: 55%;
   }
 }
