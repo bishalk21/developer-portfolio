@@ -5,7 +5,9 @@ export const projectsData = [
     id: 1,
     codeLink: "https://github.com/bishalk21/FS-not-to-do-app",
     liveLink: "https://not-to-do-list-app.herokuapp.com/",
-    image: ecom,
+    // image: `
+    // <iframe width="560" height="315" src="https://www.youtube.com/embed/t663yKxsszU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    // `,
     stack: ["React", "NodeJS"],
 
     title: "E-commerce Website",
@@ -16,7 +18,7 @@ export const projectsData = [
     id: 2,
     codeLink: "https://github.com/bishalk21/FS-not-to-do-app",
     liveLink: "https://not-to-do-list-app.herokuapp.com/",
-    image: ecom,
+    // image: ecom,
     reverseProj: "reversed-proj",
     stack: ["React", "NodeJS"],
     title: "E-commerce Website",

@@ -19,12 +19,14 @@ const ProjectCard = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <embed
-                  src="./images/portfolio.pdf"
-                  type="application/pdf"
-                  height="600px"
-                  width="500px"
-                ></embed>
+                <iframe
+                  id="myiframe"
+                  src="https://www.youtube.com/embed/t663yKxsszU?rel=0&amp;autoplay=1"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
                 {/* <img src={project.image} alt={project.title} /> */}
               </a>
             </div>
