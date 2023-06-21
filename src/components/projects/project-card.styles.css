@@ -33,6 +33,7 @@
   height: auto;
   position: relative;
   overflow: hidden;
+  width: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: hsla(0, 0%, 46%, 0.2);
 }
