@@ -4,5 +4,8 @@ export default {
   theme: {
     extend: {},
   },
+  fontFamily: {
+    serif: ["Cardo", "serif"],
+  },
   plugins: [],
 };
