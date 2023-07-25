@@ -7,7 +7,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const stickyNavFunc = () => {
-    window.scrollY >= 65 ? setStickyNav(true) : setStickyNav(false);
+    window.scrollY >= 15 ? setStickyNav(true) : setStickyNav(false);
   };
 
   window.addEventListener("scroll", stickyNavFunc);
@@ -28,7 +28,7 @@ const Header = () => {
       <nav
         className={`relative top-0 left-0 right-0 flex justify-between items-center h-28 p-0 pr-20 pl-20 z-[999] bg-[#0d0e0e] max-[768px]:pr-10 max-[768px]:pl-10 ${
           stickyNav
-            ? "fixed top-0 left-0 right-0 h-20 bg-[#0d0e0e] z-[999]"
+            ? "sticky border-b border-[#aaaaaa79] top-0 left-0 right-0 h-20 bg-[#0d0e0e] z-[999]"
             : ""
         }`}
       >
@@ -47,7 +47,7 @@ const Header = () => {
         <ul className="flex list-none gap-5 flex-1 m-0 mr-8 ml-20 max-[768px]:hidden">
           <li className="nav-list">
             <Link
-              to="home"
+              to="/"
               smooth="true"
               duration={0}
               delay={0}
@@ -170,7 +170,7 @@ const Header = () => {
           </div>
 
           <ul className="flex flex-col items-center justify-center h-4/6 gap-8">
-            <Link to="home" onClick={toggle} className="mobile-menu-link">
+            <Link to="/" onClick={toggle} className="mobile-menu-link">
               Home
             </Link>
             <Link to="projects" onClick={toggle} className="mobile-menu-link">

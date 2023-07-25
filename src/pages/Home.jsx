@@ -13,15 +13,15 @@ const Home = () => {
         <div className="row flex relative h-auto items-center justify-center gap-4 w-full max-[900px]:flex-col-reverse">
           <div className="w-3/5 flex flex-col max-w-3xl relative max-[900px]:text-center">
             {/* <div className="col hero-text" md={4}> */}
-            <h1 className="text-[#f7f7f7] text-5xl m-0 mt-4 mb-4 font-bold">
+            <h1 className="text-[#f7f7f7] text-4xl m-0 mt-4 mb-4 font-bold max-[456px]:text-2xl">
               A Passionate Software Developer
               <span className="hand-wave">👋</span>
             </h1>
-            <p className="text-[#fff9f9] font-sans text-xl font-medium">
+            <p className="text-[#fff9f9] font-sans text-xl font-medium max-[456px]:text-sm">
               Hi, I'm Bishal Karki, Front-End React Developer based in Sydney,
               Australia. 📍
             </p>
-            <h3 className="mt-3 font-semibold">
+            <h3 className="mt-3 font-semibold max-[456px]:text-sm">
               I <span className="change-text"></span>{" "}
               <span className="responsive">r</span>
               <span className="responsive">e</span>
@@ -35,7 +35,7 @@ const Home = () => {
               <span className="responsive">e</span> websites.
             </h3>
 
-            <div className="mt-11 flex gap-4 items-center max-[900px]:justify-center">
+            <div className="mt-11 max-[768px]:text-left max-[768px]:mt-5 text-center flex gap-4 items-center max-[900px]:items-center max-[900px]:justify-center">
               <Link
                 className="styled-btn projects"
                 to="projects"
@@ -62,16 +62,19 @@ const Home = () => {
               </Link>
             </div>
 
-            <hr className="w-20 absolute -bottom-36 bg-[#aaa] border-none h-0.5 rounded-3xl" />
-            <p className="greeting">
+            <hr className="w-20 absolute -bottom-36 bg-[#aaa] border-none h-0.5 rounded-3xl max-[900px]:-bottom-8 max-[900px]:-left-8" />
+            <p className="absolute -bottom-48 text-[#aaa] max-[900px]:-bottom-16 max-[900px]:-left-8">
               have a great{" "}
               <span>
-                {hour < 12 ? " morning" : hour < 18 ? " afternoon" : " evening"}
+                {hour < 12
+                  ? " morning  🌄"
+                  : hour < 18
+                  ? " afternoon  ☀️"
+                  : " evening  🌇"}
               </span>
-              .
             </p>
 
-            <div className="socials">
+            <div className="socials flex flex-col gap-7 absolute -right-96 -bottom-48 max-[900px]:flex max-[900px]:flex-row max-[900px]:-right-8 md:-right-68 max-[900px]:-bottom-16">
               <a
                 href="mailto:karkibishal00@gmail.com"
                 target="_blank"
@@ -95,10 +98,12 @@ const Home = () => {
               </a>
             </div>
 
-            <span className="quote">Don't wish for it! Work for it!</span>
+            <span className="absolute -right-[10%] -bottom-1/4 max-[900px]:-right-8 max-[900px]:-bottom-8 max-[900px]:text-xs">
+              Don't wish for it! Work for it!
+            </span>
           </div>
           {/* <Col className="hero-img" md={8}></Col> */}
-          <div className="w-2/5 hero-img max-[900px]:w-3/5"></div>
+          <div className="w-2/5 hero-img max-[768px]:w-3/5"></div>
         </div>
       </div>
     </div>

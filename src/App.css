@@ -306,6 +306,9 @@ p span:nth-of-type(10) {
 }
 
 .styled-btn {
+  text-align: center;
+  min-width: -moz-min-content;
+  min-width: min-content;
   color: #fff;
   font-size: 0.9875em;
   font-weight: 500;
@@ -399,21 +402,6 @@ p span:nth-of-type(10) {
   }
 }
 
-.hero-text .greeting {
-  position: absolute;
-  bottom: -12rem;
-  color: var(--color-lightGray);
-}
-
-.socials {
-  display: flex;
-  flex-direction: column;
-  gap: 1.75rem;
-  position: absolute;
-  right: -24rem;
-  bottom: -12rem;
-}
-
 .socials > a {
   cursor: pointer;
   transition: 0.3s ease;
@@ -453,63 +441,15 @@ p span:nth-of-type(10) {
   letter-spacing: 0.125rem;
 }
 
-@media all and (max-width: 1296px) {
-  .hero-text {
-    width: 62%;
-  }
-
-  .hero-img {
-    width: 38%;
-  }
-}
-
-@media all and (max-width: 900px) {
-  .hero-main {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .content {
-    flex-direction: column-reverse;
-    gap: 2rem;
-    height: auto;
-    text-align: center;
-  }
-
-  .styled-btn-container {
-    justify-content: center;
-  }
-
+@media all and (max-width: 696px) {
   .hero-img {
     height: 18rem;
     width: 18rem;
   }
-
-  .hero-text {
-    align-items: center;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-  }
-
-  .lines {
-    bottom: -6rem;
-  }
-
-  .hero-text .greeting {
-    bottom: -8rem;
-  }
-
-  .socials {
-    display: none;
-  }
-
-  .quote {
-    right: 28%;
+}
+@media all and (max-width: 900px) {
+  .hero-img {
+    height: 20rem;
+    width: 20rem;
   }
 }
