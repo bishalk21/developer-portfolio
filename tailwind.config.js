@@ -6,6 +6,7 @@ export default {
   },
   fontFamily: {
     serif: ["Cardo", "serif"],
+    mulish: ["Mulish", "sans-serif"],
   },
   plugins: [],
 };

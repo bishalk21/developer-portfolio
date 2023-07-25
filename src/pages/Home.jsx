@@ -1,5 +1,108 @@
+import { Link } from "react-router-dom";
+
 const Home = () => {
-  return <section>Home</section>;
+  const today = new Date();
+  const hour = today.getHours();
+
+  return (
+    <div
+      className="home relative h-screen w-full bg-[#0d0e0e] text-[#aaa] flex flex-col items-center pr-20 pl-20 p-10 max-[900px]:p-2 md:pl-10 md:pr-10"
+      id="home"
+    >
+      <div className="container mx-auto hero-main relative flex items-center justify-center">
+        <div className="row flex relative h-auto items-center justify-center gap-4 w-full max-[900px]:flex-col-reverse">
+          <div className="w-3/5 flex flex-col max-w-3xl relative max-[900px]:text-center">
+            {/* <div className="col hero-text" md={4}> */}
+            <h1 className="text-[#f7f7f7] text-5xl m-0 mt-4 mb-4 font-bold">
+              A Passionate Software Developer
+              <span className="hand-wave">👋</span>
+            </h1>
+            <p className="text-[#fff9f9] font-sans text-xl font-medium">
+              Hi, I'm Bishal Karki, Front-End React Developer based in Sydney,
+              Australia. 📍
+            </p>
+            <h3 className="mt-3 font-semibold">
+              I <span className="change-text"></span>{" "}
+              <span className="responsive">r</span>
+              <span className="responsive">e</span>
+              <span className="responsive">s</span>
+              <span className="responsive">p</span>
+              <span className="responsive">o</span>
+              <span className="responsive">n</span>
+              <span className="responsive">s</span>
+              <span className="responsive">i</span>
+              <span className="responsive">v</span>
+              <span className="responsive">e</span> websites.
+            </h3>
+
+            <div className="mt-11 flex gap-4 items-center max-[900px]:justify-center">
+              <Link
+                className="styled-btn projects"
+                to="projects"
+                duration={0}
+                delay={0}
+                spy="true"
+                spythrottle={0}
+                exact="true"
+                offset={-50}
+              >
+                <span>Projects</span>
+              </Link>
+              <Link
+                className="styled-btn about-me secondary"
+                to="about"
+                duration={0}
+                delay={0}
+                spy="true"
+                spythrottle={0}
+                exact="true"
+                offset={-50}
+              >
+                <span>About me</span>
+              </Link>
+            </div>
+
+            <hr className="w-20 absolute -bottom-36 bg-[#aaa] border-none h-0.5 rounded-3xl" />
+            <p className="greeting">
+              have a great{" "}
+              <span>
+                {hour < 12 ? " morning" : hour < 18 ? " afternoon" : " evening"}
+              </span>
+              .
+            </p>
+
+            <div className="socials">
+              <a
+                href="mailto:karkibishal00@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fa-solid fa-envelope"></i>
+              </a>
+              <a
+                href="https://www.github.com/bishalk21"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fa-brands fa-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/bishalk21"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fa-brands fa-linkedin"></i>
+              </a>
+            </div>
+
+            <span className="quote">Don't wish for it! Work for it!</span>
+          </div>
+          {/* <Col className="hero-img" md={8}></Col> */}
+          <div className="w-2/5 hero-img max-[900px]:w-3/5"></div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Home;

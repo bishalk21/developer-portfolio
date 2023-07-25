@@ -4,7 +4,7 @@ import me from "../assets/logo/me.png";
 
 const Header = () => {
   const [stickyNav, setStickyNav] = useState(false);
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const stickyNavFunc = () => {
     window.scrollY >= 65 ? setStickyNav(true) : setStickyNav(false);
@@ -183,14 +183,14 @@ const Header = () => {
               Contact
             </Link>
             <a
-              className="mobile-button"
+              className="mobile-button font-serif text-base overflow-hidden bg-[#111] rounded-lg relative text-white uppercase font-medium"
               href="mailto:karkibishal00@gmail.com"
               target="_blank"
               rel="noreferrer"
             >
               {" "}
-              <span>
-                <span>
+              <span className="flex items-center gap-3 relative overflow-hidden">
+                <span className="flex items-center gap-3 overflow-hidden">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
