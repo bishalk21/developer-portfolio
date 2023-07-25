@@ -8,5 +8,8 @@ export default {
     serif: ["Cardo", "serif"],
     mulish: ["Mulish", "sans-serif"],
   },
+  backgroundImage: {
+    "my-profile": "url('./src/assets/images/me.jpeg')",
+  },
   plugins: [],
 };
