@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Technologies from "../components/technologies/Technologies";
 import { Projects } from "./Projects";
 import About from "./About";
+import Parallax from "../components/parallax/Parallax";
 
 const Home = () => {
   const today = new Date();
@@ -114,6 +115,7 @@ const Home = () => {
       <Technologies />
       <Projects />
       <About />
+      <Parallax />
     </div>
   );
 };
