@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Technologies from "../components/technologies/Technologies";
 import { Projects } from "./Projects";
+import About from "./About";
 
 const Home = () => {
   const today = new Date();
@@ -112,6 +113,7 @@ const Home = () => {
       </div>
       <Technologies />
       <Projects />
+      <About />
     </div>
   );
 };

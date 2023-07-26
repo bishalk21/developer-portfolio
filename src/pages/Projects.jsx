@@ -19,7 +19,7 @@ import { projectsData } from "../components/projects/projectsData";
 export const Projects = () => {
   return (
     <>
-      <div className="bg-[#ffffff] text-[#111] pr-20 pl-20 p-4">
+      <div id="/projects" className="bg-[#ffffff] text-[#111] pr-20 pl-20 p-4">
         <div className="text-center relative flex items-center justify-center flex-col mb-10">
           <h2 className="mb-2 relative md:text-5xl text-3xl font-extrabold capitalize z-10 inline-block text-[#262637]">
             <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10 text-[#00000016] text-6xl md:text-8xl">
@@ -39,7 +39,7 @@ export const Projects = () => {
               Want to see more?
             </a>
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-5 mt-8">
+          <div className="flex flex-wrap items-center justify-center gap-5 mt-8 w-[95%]">
             {projectsData.map((project) => (
               <ProjectCard key={project.id} {...project} />
             ))}
