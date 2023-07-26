@@ -8,6 +8,7 @@ import Error from "./pages/Error.jsx";
 import Home from "./pages/Home.jsx";
 import { Projects } from "./pages/Projects.jsx";
 import About from "./pages/About.jsx";
+import Footer from "./components/footer/Footer.jsx";
 
 const appRouter = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Footer />,
       },
     ],
     errorElement: <Error />,

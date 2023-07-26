@@ -3,6 +3,7 @@ import Technologies from "../components/technologies/Technologies";
 import { Projects } from "./Projects";
 import About from "./About";
 import Parallax from "../components/parallax/Parallax";
+import Footer from "../components/footer/Footer";
 
 const Home = () => {
   const today = new Date();
@@ -116,6 +117,7 @@ const Home = () => {
       <Projects />
       <About />
       <Parallax />
+      <Footer />
     </div>
   );
 };
