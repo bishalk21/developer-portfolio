@@ -1,7 +1,7 @@
 const ProjectCard = ({ ...project }) => {
   const { image, transitionImage, title, codeLink, liveLink } = project;
   return (
-    <article className="project-card bg-[#fff] max-w-full w-96 h-80 flex items-center justify-center flex-col rounded relative overflow-hidden">
+    <article className="project-card bg-[#fff] max-w-full w-64 h-56 flex items-center justify-center flex-col rounded relative overflow-hidden">
       <img
         className="w-full h-full object-contain relative"
         src={image}
@@ -12,7 +12,7 @@ const ProjectCard = ({ ...project }) => {
         src={transitionImage}
         alt={title}
       />
-      <div className="project-details absolute text-left right-0 bottom-0 left-0 pr-12 pl-12 pt-20 pb-20 text-[#fff] opacity-0 pointer-events-none mt-8 z-50">
+      <div className="project-details absolute text-left right-0 bottom-0 left-0 pr-12 pl-8 pt-20 pb-20 text-[#fff] opacity-0 pointer-events-none mt-8 z-50">
         <span>{title}</span>
         <a
           className="code-live-link absolute bottom-8 left-32 text-white text-sm flex items-center justify-center gap-2"

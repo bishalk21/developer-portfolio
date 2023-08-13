@@ -5,22 +5,22 @@ import resume from "../assets/resume/bishalresume.pdf";
 
 const About = () => {
   return (
-    <div className="bg-[#0d0e0e] text-[#aaa] pr-20 pl-20 p-8" id="about">
+    <div className="bg-[#0d0e0e] text-[#aaa] p-8" id="about">
       <div className="about relative text-center">
         <h2 className="mb-12 text-center relative text-lg md:text-5xl font-bold z-10 text-[#d0d0d0] inline-block">
           About Myself
         </h2>
       </div>
       <div className="m-0 mx-auto max-w-screen-lg">
-        <div className="flex items-center justify-between max-[950px]:flex-col flex-row gap-4 max-w-full">
-          <div className="img-side relative md:w-[55%]">
+        <div className="flex items-center justify-between max-[950px]:flex-col flex-row gap-4 w-full">
+          <div className="img-side relative ">
             <img src={wEmoji} alt="emoji" className="work-emoji" />
             <img src={mee} alt="mee" className="__main-img" />
             <span>
               <img src={text} alt="text" />
             </span>
           </div>
-          <div className="text-side max-[950px]:text-center max-[950px]:w-[80%] w-[40%]">
+          <div className="text-side max-[950px]:text-center max-[950px]:w-[80%]">
             <div className="styled-paragraph">
               {" "}
               My name is Bishal Karki, graduated student of Bachelor of

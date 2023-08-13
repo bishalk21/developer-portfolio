@@ -1,6 +1,9 @@
 // JS CALCULATOR
-import calculator1 from "../../assets/projects/js-calc-1.png";
-import calculator2 from "../../assets/projects/js-calc-2.png";
+// import calculator1 from "../../assets/projects/js-calc-1.png";
+// import calculator2 from "../../assets/projects/js-calc-2.png";
+
+import pnm_register from "../../assets/projects/procraste-no-more-register.png";
+import pnm_loggeed_in from "../../assets/projects/procraste-no-more-logged-in.png";
 
 // REACT CALCULATOR
 import calculator3 from "../../assets/projects/react-calc-1.png";
@@ -19,12 +22,13 @@ import ft1 from "../../assets/projects/ET1.png";
 import ft2 from "../../assets/projects/ET2.png";
 import habitTracker from "../../assets/projects/habittracker.png";
 
-
 export {
-  calculator1,
-  calculator2,
+  // calculator1,
+  // calculator2,
   calculator3,
   calculator4,
+  pnm_register,
+  pnm_loggeed_in,
   movielist1,
   movielist2,
   notToDo1,
