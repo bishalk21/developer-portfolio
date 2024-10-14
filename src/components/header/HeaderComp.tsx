@@ -38,7 +38,9 @@ const HeaderComp = () => {
     <>
       <nav
         className={`relative px-10 top-0 left-0 z-[999] right-0 py-8   flex justify-between items-center gap-3 ${
-          stickyNav ? "sticky top-0 z-[999] left-0 right-0" : ""
+          stickyNav
+            ? "sticky top-0 z-50 left-0 right-0 shadow-md backdrop-blur-sm"
+            : ""
         }`}
       >
         <div

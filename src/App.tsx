@@ -7,6 +7,7 @@ import reactIcon from "./assets/icons/react.svg";
 import { ISourceOptions } from "@tsparticles/engine";
 import Hero from "./pages/hero/Hero";
 import Technologies from "./components/technologies/Technologies";
+import Projects from "./pages/projects/Projects";
 
 function App() {
   const [init, setInit] = useState(false);
@@ -189,6 +190,7 @@ function App() {
       {/* <Outlet /> */}
       <Hero />
       <Technologies />
+      <Projects />
     </main>
   );
 }

@@ -2,8 +2,8 @@ import { iconsData } from "./iconsData";
 
 const Technologies = () => {
   return (
-    <section className="bg-[#0d0e0e] w-full">
-      <div className="text-white p-5">
+    <section className="backdrop-blur-sm w-full">
+      <div className="p-5">
         <h2 className="text-center font-extrabold pb-6">
           Technologies I am familiar with
         </h2>
