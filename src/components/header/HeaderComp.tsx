@@ -31,7 +31,6 @@ const HeaderComp = () => {
 
   const themeToggle = () => {
     const html = document.getElementsByTagName("html")[0];
-    console.log(html);
     html.classList.toggle("light");
   };
 
@@ -79,8 +78,8 @@ const HeaderComp = () => {
                   </div>
                 </>
               ) : (
-                <div className="text-black">
-                  <div className="line w-6"></div>
+                <div className="text-bgBlack">
+                  <div className="line w-6 "></div>
                   <div className="line"></div>
                   <div className="line w-6 ml-2"></div>
                 </div>
