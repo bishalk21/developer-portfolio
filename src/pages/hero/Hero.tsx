@@ -21,7 +21,7 @@ const Hero = () => {
           <h1 className="text-4xl font-bold p-3 pl-0">Bishal Karki</h1>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp">
-          <h3 className="text-xl font-bold text-nowrap p-2 pl-0">
+          <h3 className="text-xl font-bold p-2 pl-0 text-center">
             <span className="text-green-500 ">Full Stack Developer</span> based
             in Sydney, Australia. 📍
           </h3>
