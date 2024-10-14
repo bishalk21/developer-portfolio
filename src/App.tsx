@@ -9,6 +9,7 @@ import Hero from "./pages/hero/Hero";
 import Technologies from "./components/technologies/Technologies";
 import Projects from "./pages/projects/Projects";
 import About from "./pages/about/About";
+import Parallax from "./components/parallax/Parallax";
 
 function App() {
   const [init, setInit] = useState(false);
@@ -193,6 +194,7 @@ function App() {
       <Technologies />
       <Projects />
       <About />
+      <Parallax />
     </main>
   );
 }
