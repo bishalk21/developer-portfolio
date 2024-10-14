@@ -6,11 +6,13 @@ const ProjectCard = ({ ...project }) => {
         className="w-full h-full object-contain relative"
         src={image}
         alt={title}
+        loading="lazy"
       />
       <img
         className="transition-image absolute w-full h-full object-contain opacity-0"
         src={transitionImage}
         alt={title}
+        loading="lazy"
       />
       <div className="project-details absolute text-left right-0 bottom-0 left-0 pr-12 pl-8 pt-20 pb-20 text-[#fff] opacity-0 pointer-events-none mt-8 z-50">
         <span>{title}</span>

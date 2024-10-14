@@ -5,8 +5,8 @@ import "./projects.css";
 const Projects = () => {
   return (
     <section
-      id="/projects"
-      className="w-full text-center relative flex items-center justify-center flex-col mb-10"
+      id="projects"
+      className="w-full pt-0 text-center relative flex items-center justify-center flex-col mb-10"
     >
       <h2 className="mb-2 relative text-5xl font-extrabold capitalize z-10 inline-block">
         <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10 text-[#8a8a8a5a] text-8xl">

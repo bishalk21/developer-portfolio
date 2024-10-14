@@ -1,16 +1,14 @@
-// import { Outlet } from "react-router-dom";
-import HeaderComp from "./components/header/HeaderComp";
+import { Outlet } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import reactIcon from "./assets/icons/react.svg";
+import reactIcon from "../../assets/icons/react.svg";
 import { ISourceOptions } from "@tsparticles/engine";
-import Hero from "./pages/hero/Hero";
-import Technologies from "./components/technologies/Technologies";
-import Projects from "./pages/projects/Projects";
-import About from "./pages/about/About";
+import HeaderComp from "../header/HeaderComp";
+import Hero from "@/pages/hero/Hero";
+import Technologies from "../technologies/Technologies";
 
-function App() {
+const MainLayout = () => {
   const [init, setInit] = useState(false);
 
   // this should be run only once per application lifetime
@@ -183,18 +181,15 @@ function App() {
     }),
     []
   );
-
   return (
     <main className="relative space-y-12">
-      <HeaderComp />
       <>{init && <Particles id="tsparticles" options={options} />}</>
-      {/* <Outlet /> */}
+      <HeaderComp />
       <Hero />
       <Technologies />
-      <Projects />
-      <About />
+      <Outlet />
     </main>
   );
-}
+};
 
-export default App;
+export default MainLayout;

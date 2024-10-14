@@ -1,5 +1,7 @@
 import App from "@/App";
+import About from "@/pages/about/About";
 import Error from "@/pages/error/Error";
+import Projects from "@/pages/projects/Projects";
 import { createBrowserRouter } from "react-router-dom";
 
 export const appRouter = createBrowserRouter([
@@ -9,11 +11,11 @@ export const appRouter = createBrowserRouter([
     children: [
       {
         path: "/projects",
-        element: <div>project</div>,
+        element: <Projects />,
       },
       {
         path: "/about",
-        element: <div>About</div>,
+        element: <About />,
       },
       {
         path: "/contact",

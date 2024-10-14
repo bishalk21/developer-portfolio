@@ -13,7 +13,7 @@ const MobileMenu = ({ toggle, isOpen }: MobileMenuProps) => {
       <div
         className={`${
           isOpen
-            ? "fixed bg-red-700 z-50 opacity-90 top-24 flex items-center justify-center backdrop-blur-md"
+            ? "fixed z-50 opacity-90 top-16 flex items-center justify-center backdrop-blur-md"
             : "-top-full opacity-0"
         } mobile-menu-container relative`}
         onClick={() => toggle()}
@@ -22,13 +22,13 @@ const MobileMenu = ({ toggle, isOpen }: MobileMenuProps) => {
           <Link to="/" className="mobile-menu-link" onClick={toggle}>
             Home
           </Link>
-          <Link to="projects" onClick={toggle} className="mobile-menu-link">
+          <Link to="/projects" onClick={toggle} className="mobile-menu-link">
             Projects
           </Link>
-          <Link to="about" onClick={toggle} className="mobile-menu-link">
+          <Link to="/about" onClick={toggle} className="mobile-menu-link">
             About
           </Link>
-          <Link to="contact" onClick={toggle} className="mobile-menu-link">
+          <Link to="/contact" onClick={toggle} className="mobile-menu-link">
             Contact
           </Link>
           <a
