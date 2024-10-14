@@ -51,8 +51,8 @@ const Hero = () => {
             <span>About me</span>
           </Link>
         </div>
-        <hr className="w-20 absolute -bottom-12 left-5 bg-[#aaa] border-none h-0.5 rounded-3xl" />
-        <p className="absolute -bottom-20 text-[#aaa] left-5">
+        <hr className="w-20 absolute -bottom-12 left-1 bg-[#aaa] border-none h-0.5 rounded-3xl" />
+        <p className="absolute -bottom-20 text-[#aaa] left-1">
           have a great{" "}
           <span>
             {hour < 12
@@ -62,7 +62,7 @@ const Hero = () => {
               : " evening  🌇"}
           </span>
         </p>
-        <div className="socials flex flex-row gap-7 absolute right-8 -bottom-14">
+        <div className="socials flex flex-row gap-7 absolute right-1 -bottom-14">
           <a
             href="mailto:karkibishal00@gmail.com"
             target="_blank"
@@ -85,7 +85,7 @@ const Hero = () => {
             <i className="fa-brands fa-linkedin"></i>
           </a>
         </div>
-        <span className="absolute right-4 -bottom-1/4 text-[#94929d] text-xs font-medium">
+        <span className="absolute right-1 -bottom-1/4 text-[#94929d] text-xs font-medium">
           Don't wish for it! Work for it!
         </span>
       </div>

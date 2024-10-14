@@ -37,7 +37,7 @@ const HeaderComp = () => {
   return (
     <>
       <nav
-        className={`relative px-10 top-0 left-0 z-[999] right-0 py-8   flex justify-between items-center gap-3 ${
+        className={`relative px-10 top-0 left-0 z-[999] right-0 py-8 flex justify-between items-center gap-3 ${
           stickyNav
             ? "sticky top-0 z-50 left-0 right-0 shadow-md backdrop-blur-sm"
             : ""
@@ -141,9 +141,16 @@ const HeaderComp = () => {
             </span>
           </span>
         </a>
-
-        <MobileMenu toggle={toggle} ScrollToTop={ScrollToTop} isOpen={isOpen} />
       </nav>
+
+      <div className="relative h-full">
+        <MobileMenu
+          toggle={toggle}
+          ScrollToTop={ScrollToTop}
+          isOpen={isOpen}
+          stickyNav={stickyNav}
+        />
+      </div>
     </>
   );
 };

@@ -4,19 +4,22 @@ interface MobileMenuProps {
   toggle: () => void;
   ScrollToTop: () => void;
   isOpen: boolean;
+  stickyNav: boolean;
 }
 
-const MobileMenu = ({ toggle, ScrollToTop, isOpen }: MobileMenuProps) => {
+const MobileMenu = ({ toggle, isOpen }: MobileMenuProps) => {
   return (
     <>
       <div
         className={`${
-          isOpen ? "opacity-90 top-24" : "-top-full opacity-0"
-        } mobile-menu-container`}
+          isOpen
+            ? "fixed bg-red-700 z-50 opacity-90 top-24 flex items-center justify-center backdrop-blur-md"
+            : "-top-full opacity-0"
+        } mobile-menu-container relative`}
         onClick={() => toggle()}
       >
-        <ul className="flex flex-col items-center justify-center h-4/6 gap-8">
-          <Link to="/" className="mobile-menu-link" onClick={ScrollToTop}>
+        <ul className="flex flex-col items-center justify-center gap-8">
+          <Link to="/" className="mobile-menu-link" onClick={toggle}>
             Home
           </Link>
           <Link to="projects" onClick={toggle} className="mobile-menu-link">
@@ -29,7 +32,7 @@ const MobileMenu = ({ toggle, ScrollToTop, isOpen }: MobileMenuProps) => {
             Contact
           </Link>
           <a
-            className="mobile-button font-serif text-base overflow-hidden bg-[#111] rounded-lg relative text-white uppercase font-medium"
+            className="mobile-button font-serif text-base bg-[#111] rounded-lg relative text-white uppercase font-medium"
             href="mailto:karkibishal00@gmail.com"
             target="_blank"
             rel="noreferrer"
