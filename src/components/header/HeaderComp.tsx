@@ -29,10 +29,16 @@ const HeaderComp = () => {
     setIsOpen(!isOpen);
   };
 
+  const themeToggle = () => {
+    const html = document.getElementsByTagName("html")[0];
+    console.log(html);
+    html.classList.toggle("light");
+  };
+
   return (
     <>
       <nav
-        className={`relative px-10 top-0 left-0 z-[999] right-0 py-8 bg-bgBlack text-white flex justify-between items-center gap-3 ${
+        className={`relative px-10 top-0 left-0 z-[999] right-0 py-8   flex justify-between items-center gap-3 ${
           stickyNav ? "sticky top-0 z-[999] left-0 right-0" : ""
         }`}
       >
@@ -56,11 +62,11 @@ const HeaderComp = () => {
             </Link>
           </div>
 
-          <div className="flex items-center justify-center text-white flex-row gap-1 md:hidden">
+          <div className="flex items-center justify-center  flex-row gap-1 md:hidden">
             {isOpen ? (
-              <span className="text-white">Close</span>
+              <span className="">Close</span>
             ) : (
-              <span className="text-white">Menu</span>
+              <span className="">Menu</span>
             )}
             <div
               className="cursor-pointer max-[768px]:block"
@@ -73,22 +79,17 @@ const HeaderComp = () => {
                   </div>
                 </>
               ) : (
-                <>
+                <div className="text-black">
                   <div className="line w-6"></div>
                   <div className="line"></div>
                   <div className="line w-6 ml-2"></div>
-                </>
+                </div>
               )}
             </div>
           </div>
         </div>
 
-        <ul className="flex gap-5 max-[768px]:hidden list-none">
-          <li className="nav-list">
-            <Link to="/" className="styled-nav-links">
-              Home
-            </Link>
-          </li>
+        <ul className="flex gap-5 max-[768px]:hidden list-none items-center ">
           <li className="nav-list">
             <Link to="/projects" className="styled-nav-links">
               Projects
@@ -104,6 +105,18 @@ const HeaderComp = () => {
               Contact
             </Link>{" "}
           </li>
+          <li className="nav-list">
+            <div className="flex items-center space-x-2">
+              <input
+                onChange={themeToggle}
+                className="container_toggle"
+                type="checkbox"
+                id="switch"
+                name="mode"
+              />
+              <label htmlFor="switch">Toggle</label>
+            </div>
+          </li>
         </ul>
 
         <a
@@ -112,7 +125,7 @@ const HeaderComp = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span className="relative overflow-hidden">
+          <span className="relative overflow-hidden text-white">
             <span className="overflow-hidden flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
