@@ -10,6 +10,7 @@ import Technologies from "./components/technologies/Technologies";
 import Projects from "./pages/projects/Projects";
 import About from "./pages/about/About";
 import Parallax from "./components/parallax/Parallax";
+import FooterComp from "./components/footer/FooterComp";
 
 function App() {
   const [init, setInit] = useState(false);
@@ -195,6 +196,7 @@ function App() {
       <Projects />
       <About />
       <Parallax />
+      <FooterComp />
     </main>
   );
 }
