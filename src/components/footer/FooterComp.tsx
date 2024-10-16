@@ -3,7 +3,7 @@ import "./footer.css";
 const FooterComp = () => {
   const year = new Date().getFullYear();
   return (
-    <footer className="styled-footer pt-0">
+    <footer className="styled-footer pt-0" id="contact">
       <div className="footer-title">
         <span>get in touch</span>
       </div>

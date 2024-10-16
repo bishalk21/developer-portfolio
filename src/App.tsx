@@ -1,5 +1,4 @@
 // import { Outlet } from "react-router-dom";
-import HeaderComp from "./components/header/HeaderComp";
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
@@ -11,6 +10,7 @@ import Projects from "./pages/projects/Projects";
 import About from "./pages/about/About";
 import Parallax from "./components/parallax/Parallax";
 import FooterComp from "./components/footer/FooterComp";
+import Navbar from "./components/header/Navbar";
 
 function App() {
   const [init, setInit] = useState(false);
@@ -188,15 +188,18 @@ function App() {
 
   return (
     <main className="relative space-y-12">
-      <HeaderComp />
-      <>{init && <Particles id="tsparticles" options={options} />}</>
-      {/* <Outlet /> */}
+      <Navbar />
       <Hero />
       <Technologies />
       <Projects />
       <About />
       <Parallax />
       <FooterComp />
+      <>
+        {init && (
+          <Particles id="tsparticles" options={options} className="-z-10" />
+        )}
+      </>
     </main>
   );
 }

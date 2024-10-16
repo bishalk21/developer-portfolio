@@ -8,7 +8,7 @@ const About = () => {
   return (
     <section className="p-8" id="about">
       <div className="about relative text-center">
-        <h2 className="mb-12 text-center relative text-lg md:text-5xl font-bold z-10 inline-block">
+        <h2 className="mb-12 text-center relative text-5xl font-bold z-10 inline-block">
           <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10 text-[#8a8a8a5a] text-8xl">
             02
           </span>{" "}

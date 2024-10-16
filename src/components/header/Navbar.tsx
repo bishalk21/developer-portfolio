@@ -4,7 +4,7 @@ import me from "../../assets/img/logo/me.png";
 import "./header.css";
 import MobileMenu from "./MobileMenu";
 
-const HeaderComp = () => {
+const Navbar = () => {
   const [stickyNav, setStickyNav] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -155,4 +155,4 @@ const HeaderComp = () => {
   );
 };
 
-export default HeaderComp;
+export default Navbar;

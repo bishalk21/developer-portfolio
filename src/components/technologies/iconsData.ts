@@ -85,4 +85,9 @@ export const iconsData = [
     icon: tailwindcss,
     name: "Tailwind CSS",
   },
+  // {
+  //   id:17,
+  //   name: Node.js,
+  //   icon: nodejs,
+  // }
 ];
