@@ -15,6 +15,8 @@ import Navbar from "./components/header/Navbar";
 function App() {
   const [init, setInit] = useState(false);
 
+  // on window scroll, set active color to respective section of nav link
+
   // this should be run only once per application lifetime
   useEffect(() => {
     initParticlesEngine(async (engine) => {

@@ -1,22 +1,40 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import me from "../../assets/img/logo/me.png";
 import "./header.css";
 import MobileMenu from "./MobileMenu";
+import { scrollToSection } from "@/utils/scrollToSection";
 
 const Navbar = () => {
   const [stickyNav, setStickyNav] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [active, setActive] = useState("home");
 
-  const stickyNavFunc = () => {
-    if (window.scrollY >= 15) {
-      setStickyNav(true);
-    } else {
-      setStickyNav(false);
-    }
-  };
+  useEffect(() => {
+    const stickyNavFunc = () => {
+      if (window.scrollY >= 10) {
+        setStickyNav(true);
 
-  window.addEventListener("scroll", stickyNavFunc);
+        if (window.scrollY >= 0 && window.scrollY < 400) {
+          setActive("home");
+        } else if (window.scrollY >= 665 && window.scrollY <= 1150) {
+          setActive("projects");
+        } else if (window.scrollY >= 1150 && window.scrollY < 2510) {
+          setActive("about");
+        } else if (window.scrollY >= 2510) {
+          setActive("contact");
+        }
+      } else {
+        setStickyNav(false);
+      }
+    };
+
+    window.addEventListener("scroll", stickyNavFunc);
+
+    return () => {
+      window.removeEventListener("scroll", stickyNavFunc);
+    };
+  }, []);
 
   const ScrollToTop = () => {
     window.scrollTo({
@@ -39,7 +57,7 @@ const Navbar = () => {
       <nav
         className={`relative px-10 top-0 left-0 z-[999] right-0 py-8 flex justify-between items-center gap-3 ${
           stickyNav
-            ? "sticky top-0 z-50 left-0 right-0 shadow-md backdrop-blur-sm"
+            ? "sticky top-0 z-50 left-0 right-0 shadow-md backdrop-blur-lg backdrop-filter"
             : ""
         }`}
       >
@@ -92,17 +110,44 @@ const Navbar = () => {
 
         <ul className="flex gap-5 max-[768px]:hidden list-none items-center ">
           <li className="nav-list">
-            <Link to="/projects" className="styled-nav-links">
+            <Link
+              to="/projects"
+              className={`styled-nav-links ${
+                active === "projects" ? "active" : ""
+              }`}
+              onClick={() => {
+                setActive("projects");
+                scrollToSection("projects");
+              }}
+            >
               Projects
             </Link>
           </li>
           <li className="nav-list">
-            <Link to="/about" className="styled-nav-links">
+            <Link
+              to="/about"
+              className={`styled-nav-links ${
+                active === "about" ? "active" : ""
+              }`}
+              onClick={() => {
+                setActive("about");
+                scrollToSection("about");
+              }}
+            >
               About
             </Link>{" "}
           </li>
           <li className="nav-list">
-            <Link to="/contact" className="styled-nav-links">
+            <Link
+              to="/contact"
+              className={`styled-nav-links ${
+                active === "contact" ? "active" : ""
+              }`}
+              onClick={() => {
+                setActive("contact");
+                scrollToSection("contact");
+              }}
+            >
               Contact
             </Link>{" "}
           </li>
@@ -144,12 +189,7 @@ const Navbar = () => {
       </nav>
 
       <div className="relative h-full">
-        <MobileMenu
-          toggle={toggle}
-          ScrollToTop={ScrollToTop}
-          isOpen={isOpen}
-          stickyNav={stickyNav}
-        />
+        <MobileMenu toggle={toggle} isOpen={isOpen} setActive={setActive} />
       </div>
     </>
   );

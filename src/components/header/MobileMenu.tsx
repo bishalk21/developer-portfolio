@@ -1,13 +1,13 @@
+import { scrollToSection } from "@/utils/scrollToSection";
 import { Link } from "react-router-dom";
 
 interface MobileMenuProps {
   toggle: () => void;
-  ScrollToTop: () => void;
   isOpen: boolean;
-  stickyNav: boolean;
+  setActive: (active: string) => void;
 }
 
-const MobileMenu = ({ toggle, isOpen }: MobileMenuProps) => {
+const MobileMenu = ({ toggle, isOpen, setActive }: MobileMenuProps) => {
   return (
     <>
       <div
@@ -19,16 +19,50 @@ const MobileMenu = ({ toggle, isOpen }: MobileMenuProps) => {
         onClick={() => toggle()}
       >
         <ul className="flex flex-col items-center justify-center gap-8">
-          <Link to="/" className="mobile-menu-link" onClick={toggle}>
+          <Link
+            to="/"
+            className="mobile-menu-link"
+            onClick={() => {
+              setActive("home");
+
+              scrollToSection("home");
+
+              toggle();
+            }}
+          >
             Home
           </Link>
-          <Link to="/projects" onClick={toggle} className="mobile-menu-link">
+          <Link
+            to="/projects"
+            onClick={() => {
+              setActive("projects");
+              scrollToSection("projects");
+              toggle();
+            }}
+            className="mobile-menu-link"
+          >
             Projects
           </Link>
-          <Link to="/about" onClick={toggle} className="mobile-menu-link">
+          <Link
+            to="/about"
+            onClick={() => {
+              setActive("about");
+              scrollToSection("about");
+              toggle();
+            }}
+            className="mobile-menu-link"
+          >
             About
           </Link>
-          <Link to="/contact" onClick={toggle} className="mobile-menu-link">
+          <Link
+            to="/contact"
+            onClick={() => {
+              setActive("contact");
+              scrollToSection("contact");
+              toggle();
+            }}
+            className="mobile-menu-link"
+          >
             Contact
           </Link>
           <a

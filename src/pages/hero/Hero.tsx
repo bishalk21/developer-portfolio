@@ -1,26 +1,24 @@
 import { Link } from "react-router-dom";
 import ScrollAnimation from "react-animate-on-scroll";
 import "./hero.css";
+import { scrollToSection } from "@/utils/scrollToSection";
 
 const Hero = () => {
   const today = new Date();
   const hour = today.getHours();
 
   return (
-    <section>
-      <div
-        className="home relative container mx-auto hero-main flex flex-col row items-center justify-center gap-4 w-full "
-        id="home"
-      >
-        <ScrollAnimation animateIn="fadeInUp">
+    <section id="home">
+      <div className="home relative container mx-auto hero-main flex flex-col row items-center justify-center gap-4 w-full ">
+        <ScrollAnimation animateIn="fadeInUp" delay={0}>
           <p className=" font-sans text-lg font-medium max-[456px]:text-sm">
             Hello <span className="hand-wave">👋</span>, I'm
           </p>
         </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInUp">
+        <ScrollAnimation animateIn="fadeInUp" delay={100}>
           <h1 className="text-4xl font-bold p-3 pl-0">Bishal Karki</h1>
         </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInUp">
+        <ScrollAnimation animateIn="fadeInUp" delay={200}>
           <h3 className="text-xl font-bold p-2 pl-0 text-center">
             <span className="text-green-500 ">Full Stack Developer</span> based
             in Sydney, Australia. 📍
@@ -44,10 +42,22 @@ const Hero = () => {
         </ScrollAnimation>
 
         <div className="mt-11 max-[768px]:text-left max-[768px]:mt-5 text-left flex gap-4 items-start max-[900px]:items-start max-[900px]:justify-center">
-          <Link className="styled-btn projects" to="projects">
+          <Link
+            className="styled-btn projects"
+            to="projects"
+            onClick={() => {
+              scrollToSection("projects");
+            }}
+          >
             <span>Projects</span>
           </Link>
-          <Link className="styled-btn about-me secondary" to="about">
+          <Link
+            className="styled-btn about-me secondary"
+            to="about"
+            onClick={() => {
+              scrollToSection("about");
+            }}
+          >
             <span>About me</span>
           </Link>
         </div>
