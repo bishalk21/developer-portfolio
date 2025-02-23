@@ -15,10 +15,10 @@ const Hero = () => {
             Hello <span className="hand-wave">👋</span>, I'm
           </p>
         </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInUp" delay={100}>
+        <ScrollAnimation animateIn="fadeInUpp" delay={0}>
           <h1 className="text-4xl font-bold p-3 pl-0">Bishal Karki</h1>
         </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInUp" delay={200}>
+        <ScrollAnimation animateIn="fadeInUp" delay={0}>
           <h3 className="text-xl font-bold p-2 pl-0 text-center">
             <span className="text-green-500 ">Full Stack Developer</span> based
             in Sydney, Australia. 📍
