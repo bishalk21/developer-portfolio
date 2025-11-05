@@ -23,7 +23,7 @@ const FooterComp = () => {
         </div>
 
         <div className="footer-contact">
-          <p className="contact-header">Social</p>
+          <p className="contact-header">Socials</p>
           <span className="footer-socials">
             <a
               href="https://github.com/bishalk21"
@@ -60,7 +60,7 @@ const FooterComp = () => {
         </div>
       </div>
 
-      <div className="copyright">
+      <div className="copyright mt-4 lg:text-center">
         <small>
           &copy; Copyright {year},{" "}
           <a

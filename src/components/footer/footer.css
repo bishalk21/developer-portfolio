@@ -65,9 +65,10 @@
 
 .footer-contacts {
   display: flex;
-  margin-top: 5rem;
+  margin-top: 2rem;
   gap: 5rem;
   flex-direction: row;
+  justify-content: center;
 }
 
 .footer-contact {
@@ -97,7 +98,7 @@
   position: absolute;
   width: 100%;
   right: 0;
-  bottom: 0;
+  bottom: -5px;
   height: 1px;
   left: 0;
   border-radius: 5px;
@@ -146,13 +147,19 @@
   }
 
   .footer-contacts {
-    margin-top: 3rem;
-    flex-direction: column;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 0.5rem;
+    width: 100%;
   }
 
   .footer-contact {
     padding-bottom: 1rem;
+    flex: 1 1 45%;
   }
 
   .footer-contact::before {
@@ -245,6 +252,14 @@
   .hero-img {
     height: 18rem;
     width: 18rem;
+  }
+
+  .footer-contacts {
+    flex-direction: column;
+  }
+
+  .footer-contact {
+    width: 100%;
   }
 }
 
