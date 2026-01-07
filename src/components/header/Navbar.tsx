@@ -1,56 +1,118 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import me from "../../assets/img/logo/me.png";
 import "./header.css";
 import MobileMenu from "./MobileMenu";
 import { scrollToSection } from "@/utils/scrollToSection";
+import CTAButton from "./CTAButton";
 
 const Navbar = () => {
   const [stickyNav, setStickyNav] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState("home");
+  const location = useLocation();
+
+  // Memoize navigation links to prevent re-creation
+  const navLinks = useMemo(
+    () => [
+      { id: "projects", label: "Projects", path: "/projects" },
+      { id: "about", label: "About", path: "/about" },
+      { id: "contact", label: "Contact", path: "/contact" },
+    ],
+    []
+  );
+
+  // Initialize theme from localStorage (runs once)
+  // useEffect(() => {
+  //   const savedTheme = localStorage.getItem("theme");
+  //   const prefersDark = window.matchMedia(
+  //     "(prefers-color-scheme: dark)"
+  //   ).matches;
+  //   const shouldBeDark = savedTheme ? savedTheme === "dark" : prefersDark;
+
+  //   setIsDark(shouldBeDark);
+  //   document.documentElement.classList.toggle("light", !shouldBeDark);
+  // }, []);
+
+  // Handle theme toggle with useCallback to prevent re-creation
+  // const themeToggle = useCallback(() => {
+  //   setIsDark((prev) => {
+  //     const newTheme = !prev;
+  //     document.documentElement.classList.toggle("light", newTheme);
+  //     localStorage.setItem("theme", newTheme ? "light" : "dark");
+  //     return newTheme;
+  //   });
+  // }, []);
 
   useEffect(() => {
-    const stickyNavFunc = () => {
-      if (window.scrollY >= 10) {
-        setStickyNav(true);
-
-        if (window.scrollY >= 0 && window.scrollY < 400) {
-          setActive("home");
-        } else if (window.scrollY >= 665 && window.scrollY <= 1150) {
-          setActive("projects");
-        } else if (window.scrollY >= 1150 && window.scrollY < 2510) {
-          setActive("about");
-        } else if (window.scrollY >= 2510) {
-          setActive("contact");
-        }
-      } else {
-        setStickyNav(false);
-      }
+    if (location.pathname !== "/") return;
+    const sections = document.querySelectorAll("section[id]");
+    if (sections.length === 0) return;
+    const observerOptions = {
+      rootMargin: "-50% 0px -50% 0px",
+      threshold: 0,
     };
 
-    window.addEventListener("scroll", stickyNavFunc);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActive(entry.target.id);
+        }
+      });
+    }, observerOptions);
 
+    sections.forEach((section) => observer.observe(section));
+
+    // return () => sections.forEach((s) => observer.unobserve(s));
+    return () => observer.disconnect();
+  }, [location.pathname]);
+
+  // Update active based on current route
+  useEffect(() => {
+    const path = location.pathname;
+    if (path === "/") setActive("home");
+    else if (path === "/projects") setActive("projects");
+    else if (path === "/about") setActive("about");
+    else if (path === "/contact") setActive("contact");
+  }, [location.pathname]);
+
+  useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+    const handleScroll = () => {
+      if (timeoutId) return;
+      timeoutId = setTimeout(() => {
+        setStickyNav(window.scrollY >= 8);
+        timeoutId = null;
+      }, 50);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      window.removeEventListener("scroll", stickyNavFunc);
+      window.removeEventListener("scroll", handleScroll);
+      if (timeoutId) clearTimeout(timeoutId);
     };
   }, []);
 
-  const ScrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+  const ScrollToTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggle = useCallback(() => {
+    setIsOpen((prev) => !prev);
+  }, []);
 
-  const themeToggle = () => {
-    const html = document.getElementsByTagName("html")[0];
-    html.classList.toggle("light");
-  };
+  const handleLogoClick = useCallback(() => {
+    ScrollToTop();
+    if (isOpen) toggle();
+  }, [isOpen, ScrollToTop, toggle]);
+
+  const handleNavClick = useCallback(
+    (id: string) => {
+      setActive(id);
+      scrollToSection(id);
+      if (isOpen) toggle();
+    },
+    [isOpen, toggle]
+  );
 
   return (
     <>
@@ -73,123 +135,75 @@ const Navbar = () => {
                 className="w-10 h-10 rounded-full cursor-pointer text-red-700"
                 width="43px"
                 height="43px"
-                onClick={() => {
-                  ScrollToTop();
-                  if (isOpen) toggle();
-                }}
+                onClick={handleLogoClick}
               />
             </Link>
           </div>
 
-          <div className="flex items-center justify-center  flex-row gap-1 md:hidden">
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={toggle}
+            className="flex items-center gap-1 md:hidden"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+          >
+            <span className="text-sm">{isOpen ? "Close" : "Menu"}</span>
             {isOpen ? (
-              <span className="">Close</span>
+              <i className="fa-solid fa-xmark text-xl" />
             ) : (
-              <span className="">Menu</span>
+              <div className="menu-icon">
+                <div className="line w-6" />
+                <div className="line" />
+                <div className="line w-6 ml-2" />
+              </div>
             )}
-            <div
-              className="cursor-pointer max-[768px]:block"
-              onClick={() => toggle()}
-            >
-              {isOpen ? (
-                <>
-                  <div className="close-icon text-xl">
-                    <i className="fa-solid fa-xmark"></i>
-                  </div>
-                </>
-              ) : (
-                <div className="text-bgBlack">
-                  <div className="line w-6 "></div>
-                  <div className="line"></div>
-                  <div className="line w-6 ml-2"></div>
-                </div>
-              )}
-            </div>
-          </div>
+          </button>
         </div>
 
-        <ul className="flex gap-5 max-[768px]:hidden list-none items-center ">
-          <li className="nav-list">
-            <Link
-              to="/projects"
-              className={`styled-nav-links ${
-                active === "projects" ? "active" : ""
-              }`}
-              onClick={() => {
-                setActive("projects");
-                scrollToSection("projects");
-              }}
-            >
-              Projects
-            </Link>
-          </li>
-          <li className="nav-list">
-            <Link
-              to="/about"
-              className={`styled-nav-links ${
-                active === "about" ? "active" : ""
-              }`}
-              onClick={() => {
-                setActive("about");
-                scrollToSection("about");
-              }}
-            >
-              About
-            </Link>{" "}
-          </li>
-          <li className="nav-list">
-            <Link
-              to="/contact"
-              className={`styled-nav-links ${
-                active === "contact" ? "active" : ""
-              }`}
-              onClick={() => {
-                setActive("contact");
-                scrollToSection("contact");
-              }}
-            >
-              Contact
-            </Link>{" "}
-          </li>
-          <li className="nav-list">
+        {/* Desktop Navigation */}
+        <ul className="flex gap-5 max-[768px]:hidden md:flex list-none items-center">
+          {navLinks.map(({ id, label, path }) => (
+            <li key={id} className="nav-list">
+              <Link
+                to={path}
+                className={`styled-nav-links ${active === id ? "active" : ""}`}
+                onClick={() => handleNavClick(id)}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+
+          {/* Theme Toggle */}
+          {/* <li className="nav-list">
             <div className="flex items-center space-x-2">
               <input
                 onChange={themeToggle}
+                checked={!isDark}
                 className="container_toggle"
                 type="checkbox"
                 id="switch"
                 name="mode"
+                aria-label="Toggle theme"
               />
-              <label htmlFor="switch">Toggle</label>
+              <label htmlFor="switch" className="cursor-pointer">
+                Toggle
+              </label>
             </div>
-          </li>
+          </li> */}
         </ul>
 
-        <a
-          className="styled-cta p-3 min-w-fit uppercase text-sm font-semibold relative overflow-hidden rounded-lg max-[768px]:hidden"
-          href="mailto:karkibishal00@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="relative overflow-hidden text-white">
-            <span className="overflow-hidden flex items-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="#fff"
-              >
-                <path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z" />
-              </svg>
-              get in touch
-            </span>
-          </span>
-        </a>
+        {/* CTA Button */}
+        <CTAButton />
       </nav>
 
       <div className="relative h-full">
-        <MobileMenu toggle={toggle} isOpen={isOpen} setActive={setActive} />
+        <MobileMenu
+          toggle={toggle}
+          isOpen={isOpen}
+          setActive={setActive}
+          navLinks={navLinks}
+        />
       </div>
     </>
   );

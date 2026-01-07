@@ -26,8 +26,8 @@ const Projects = () => {
           Want to see more?
         </a>
       </p>
-      <div className="flex flex-wrap items-center justify-center gap-4 w-full">
-        {projectsData.map((project) => (
+      <div className="grid md:grid-cols-2 gap-8">
+        {projectsData?.map((project) => (
           <ProjectCard key={project.id} {...project} />
         ))}
       </div>

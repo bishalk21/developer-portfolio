@@ -1,5 +1,6 @@
 /* ---------- Header & Mobile Menu ------------- */
-.styled-nav-links {
+.styled-nav-links,
+.mobile-menu-link {
   color: var(--color-lightGray);
   font-size: 0.895rem;
   letter-spacing: var(--letter-spacing);
@@ -10,7 +11,8 @@
   transition: 0.3s ease;
 }
 
-.styled-nav-links::after {
+.styled-nav-links::after,
+.mobile-menu-link::after {
   content: "";
   position: absolute;
   bottom: -0.3rem;
@@ -19,19 +21,22 @@
   width: 0;
   transform: scaleX(1);
   height: 0.063rem;
-  background: var(--bg-purple);
+  background: var(--color-link);
   transition: 0.3s ease-in-out;
 }
 
-.styled-nav-links:hover::after {
+.styled-nav-links:hover::after,
+.mobile-menu-link:hover::after {
   width: 100%;
 }
 
-.styled-nav-links.active {
+.styled-nav-links.active,
+.mobile-menu-link.active {
   color: #fff;
 }
 
-.styled-nav-links.active::after {
+.styled-nav-links.active::after,
+.mobile-menu-link.active::after {
   content: "";
   position: absolute;
   bottom: -0.3rem;
@@ -44,11 +49,13 @@
   transition: 0.3s ease-in-out;
 }
 
-.styled-cta {
+.styled-cta,
+.mobile-button {
   color: var(--color-white);
   letter-spacing: var(--letter-spacing);
   transition: 0.3s ease;
-  background: var(--bg-darkGray);
+  background: var(--bg-purple);
+  border-radius: 0.3125rem;
 }
 
 .styled-cta::before,
@@ -63,24 +70,27 @@
   color: var(--color-white);
 }
 
-.styled-cta:hover > span > span,
-.mobile-button:hover > span > span {
-  color: var(--color-white);
-  animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
-}
-
-.styled-cta::before,
-.mobile-button::before {
+.styled-cta::after,
+.mobile-button::after {
   content: "";
-  background: var(--bg-purple);
+  background: var(--bg-lightGreen);
+  z-index: -1;
   transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
   transform-origin: 100% 50%;
+  transform: scale3d(1, 1, 1);
+  border-radius: 0.3125rem;
 }
 
 .styled-cta:hover::before,
 .mobile-button:hover::before {
   transform: scale3d(0, 1, 1);
   transform-origin: 0% 50%;
+}
+
+.styled-cta:hover > span > span,
+.mobile-button:hover > span > span {
+  color: var(--color-white);
+  animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
 }
 
 @keyframes MoveUpInitial {
@@ -101,9 +111,26 @@
 .line {
   height: 0.1125rem;
   width: 2rem;
-  background: var(--color-light);
   margin: 0.28125rem 0;
   margin-left: 0;
+  background-color: var(--color-light);
+}
+
+.light .styled-nav-links {
+  color: var(--color-darkGray);
+}
+
+.light .line {
+  background-color: var(--bg-dark);
+}
+.light .mobile-social,
+.namaste {
+  color: var(--color-h1);
+}
+
+.light .mobile-social:hover,
+.mobile-social:hover {
+  color: var(--color-link);
 }
 
 .mobile-menu-container {
@@ -128,6 +155,10 @@
   cursor: pointer;
 }
 
+.mobile-menu-link:hover {
+  color: var(--color-link);
+}
+
 .mobile-button {
   transition: 0.3s ease;
   padding: 0.8rem 1.5rem;
@@ -140,7 +171,7 @@ input[type="checkbox"] {
   outline: none;
 }
 
-label {
+/* label {
   cursor: pointer;
   text-indent: -9999px;
   width: 55px;
@@ -161,8 +192,8 @@ label {
   label {
     position: relative;
   }
-}
-
+} */
+/* 
 label:after {
   content: "";
   background: var(--black);
@@ -175,9 +206,9 @@ label:after {
   top: 5px;
   left: 4px;
   transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
-}
+} */
 
-input:checked + label {
+/* input:checked + label {
   background: var(--darkGray);
 }
 
@@ -189,4 +220,20 @@ input:checked + label:after {
   -ms-transform: translateX(-100%);
   -o-transform: translateX(-100%);
   transform: translateX(-100%);
+} */
+
+.socials > a::after {
+  display: none;
+}
+
+.mobile-social {
+  color: var(--color-white);
+  font-size: 1rem;
+  margin-right: 1.5rem;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.mobile-social:hover,
+.socials > a:hover {
+  color: var(--color-link);
 }

@@ -9,14 +9,14 @@ const Hero = () => {
 
   return (
     <section id="home">
-      <div className="home relative container mx-auto hero-main flex flex-col row items-center justify-center gap-4 w-full ">
+      <div className="home relative container mx-auto hero-main flex flex-col row items-center justify-center gap-4 w-full">
         <ScrollAnimation animateIn="fadeInUp" delay={0}>
           <p className=" font-sans text-lg font-medium max-[456px]:text-sm">
             Hello <span className="hand-wave">👋</span>, I'm
           </p>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUpp" delay={0}>
-          <h1 className="text-4xl font-bold p-3 pl-0">Bishal Karki</h1>
+          <h1 className="text-4xl text-balance font-bold p-3 pl-0">Bishal Karki</h1>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={0}>
           <h3 className="text-xl font-bold p-2 pl-0 text-center">
