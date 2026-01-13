@@ -1,37 +1,32 @@
-export const processSteps = [
+import { type LucideIcon, Lightbulb, Code2, Rocket } from "lucide-react";
+
+export interface ProcessStep {
+  number: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+}
+
+export const processSteps: ProcessStep[] = [
   {
     number: "01",
-    title: "Discovery",
+    title: "Discovery & Planning",
     description:
-      "We discuss your needs, goals, and project requirements in detail.",
+      "We discuss your project goals, requirements, and create a detailed roadmap with clear milestones and deliverables.",
+    icon: Lightbulb,
   },
   {
     number: "02",
-    title: "Planning",
+    title: "Design & Development",
     description:
-      "Create a detailed roadmap with timelines, milestones, and deliverables.",
+      "I build your solution using modern tech stack, following best practices with regular updates and feedback cycles.",
+    icon: Code2,
   },
   {
     number: "03",
-    title: "Design",
+    title: "Testing & Deployment",
     description:
-      "Design wireframes and prototypes for your approval before development.",
-  },
-  {
-    number: "04",
-    title: "Development",
-    description:
-      "Build your project using best practices and modern technologies.",
-  },
-  {
-    number: "05",
-    title: "Testing",
-    description:
-      "Rigorous testing to ensure quality, performance, and security.",
-  },
-  {
-    number: "06",
-    title: "Launch",
-    description: "Deploy your project and provide training and documentation.",
+      "Comprehensive testing, optimization, and smooth deployment to production with ongoing support and maintenance.",
+    icon: Rocket,
   },
 ];

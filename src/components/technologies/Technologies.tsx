@@ -22,10 +22,10 @@ const Technologies = () => {
   return (
     <section
       id="tech-stack"
-      className="py-24 px-4 sm:px-6 lg:px-8 bg-background/50 overflow-hidden"
+      className="py-24 px-0 bg-background/50 overflow-hidden w-full max-w-full"
     >
-      <div className="container mx-auto max-w-7xl">
-        <div className="space-y-10">
+      <div className="mx-auto min-w-full max-w-full">
+        <div className="space-y-10 w-full">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -42,9 +42,9 @@ const Technologies = () => {
             </h2>
           </motion.div>
 
-          <div className="space-y-6 relative">
+          <div className="space-y-6 relative w-full overflow-hidden">
             {rows.map((row, rowIndex) => (
-              <div key={rowIndex} className="relative">
+              <div key={rowIndex} className="relative min-w-full">
                 <div className="marquee-container">
                   <motion.div
                     className="marquee-content"
@@ -73,9 +73,7 @@ const Technologies = () => {
                         >
                           <div
                             className={`
-                            relative px-6 py-4 rounded-xl border-2
-                            bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm
-                            shadow-lg transition-all duration-300
+                            relative px-6 py-4 rounded-xl border-2 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm shadow-lg transition-all duration-300
                             ${tech.color || "border-border"}
                             hover:shadow-2xl hover:shadow-accent/30 hover:border-accent
                             group cursor-default
@@ -121,8 +119,8 @@ const Technologies = () => {
             ))}
 
             {/* Gradient overlays for fade effect */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent pointer-events-none z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent pointer-events-none z-10" />
+            <div className="absolute left-0 -top-7 bottom-0 w-48 bg-gradient-to-r from-foreground  to-transparent pointer-events-none z-20" />
+            <div className="absolute right-0 -top-7 bottom-0 w-48 bg-gradient-to-l from-foreground to-transparent pointer-events-none z-20" />
           </div>
         </div>
       </div>

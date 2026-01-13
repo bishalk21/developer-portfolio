@@ -30,7 +30,7 @@ const About = () => {
         style={{ y: imageY, scale: imageScale }}
         className="absolute inset-0 z-0"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/80 to-background/95 z-10">
+        <div className="absolute inset-0 bg-gradient-to-b from-foreground/95 via-foreground/80 to-foreground/95 z-10">
           <img
             src={mee}
             alt="Developer working"

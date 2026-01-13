@@ -16,7 +16,9 @@ const Hero = () => {
           </p>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUpp" delay={0}>
-          <h1 className="text-4xl text-balance font-bold p-3 pl-0">Bishal Karki</h1>
+          <h1 className="text-4xl text-balance font-bold p-3 pl-0">
+            Bishal Karki
+          </h1>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={0}>
           <h3 className="text-xl font-bold p-2 pl-0 text-center">
